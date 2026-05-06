@@ -1,0 +1,125 @@
+/* src/app/pages/associados/associados.component.css */
+.page { padding: 8px; }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: #888;
+  margin: 4px 0 0;
+}
+
+.btn-novo {
+  background: #3a56e4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-novo:hover { background: #2d44c4; }
+
+.card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.input-busca {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 9px 14px;
+  font-size: 14px;
+  width: 320px;
+  outline: none;
+  transition: border 0.2s;
+}
+
+.input-busca:focus { border-color: #3a56e4; }
+
+.total { font-size: 13px; color: #888; }
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabela thead tr {
+  background: #f8f9fc;
+}
+
+.tabela th {
+  text-align: left;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tabela td {
+  padding: 14px 20px;
+  color: #333;
+  border-top: 1px solid #f0f0f0;
+}
+
+.tabela tbody tr:hover { background: #fafbff; }
+
+.td-nome { font-weight: 600; color: #1a1a2e; }
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.ativo { background: #e6f7ee; color: #27ae60; }
+.badge.inativo { background: #fdecea; color: #e53e3e; }
+
+.btn-editar {
+  background: transparent;
+  border: 1px solid #3a56e4;
+  color: #3a56e4;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-editar:hover { background: #3a56e4; color: white; }
+
+.estado-vazio {
+  padding: 48px;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}

@@ -1,0 +1,63 @@
+<!-- src/app/pages/associados/associados.component.html -->
+<div class="page">
+
+  <div class="page-header">
+    <div>
+      <h1 class="page-title">Associados</h1>
+      <p class="page-subtitle">Gerencie os membros do clube</p>
+    </div>
+    <button class="btn-novo" (click)="novo()">+ Novo Associado</button>
+  </div>
+
+  <div class="card">
+
+    <div class="toolbar">
+      <input
+        class="input-busca"
+        type="text"
+        placeholder="Buscar por nome, email ou telefone..."
+        [(ngModel)]="busca"
+        (input)="filtrar()"
+      />
+      <span class="total">{{ filtrados.length }} associado(s)</span>
+    </div>
+
+    @if (carregando) {
+      <div class="estado-vazio">Carregando...</div>
+    } @else if (filtrados.length === 0) {
+      <div class="estado-vazio">Nenhum associado encontrado.</div>
+    } @else {
+      <table class="tabela">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Status</th>
+            <th>Cadastro</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (a of filtrados; track a.id) {
+            <tr>
+              <td class="td-nome">{{ a.nome }}</td>
+              <td>{{ a.email }}</td>
+              <td>{{ formatarTelefone(a.telefone) }}</td>
+              <td>
+                <span class="badge" [class.ativo]="a.ativo" [class.inativo]="!a.ativo">
+                  {{ a.ativo ? 'Ativo' : 'Inativo' }}
+                </span>
+              </td>
+              <td>{{ formatarData(a.created_at) }}</td>
+              <td>
+                <button class="btn-editar" (click)="editar(a.id)">Editar</button>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+  </div>
+</div>

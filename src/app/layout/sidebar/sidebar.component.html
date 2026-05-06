@@ -1,0 +1,25 @@
+<!-- src/app/layout/sidebar/sidebar.component.html -->
+<aside class="sidebar">
+
+  <div class="sidebar-brand">
+    <span class="brand-icon">🏆</span>
+    <span class="brand-name">Clube</span>
+  </div>
+
+  <nav class="sidebar-nav">
+    @for (item of menuItems; track item.route) {
+      <a [routerLink]="item.route" routerLinkActive="active" class="nav-item">
+        <span class="nav-icon">{{ item.icon }}</span>
+        <span class="nav-label">{{ item.label }}</span>
+      </a>
+    }
+  </nav>
+
+  <div class="sidebar-footer">
+    <button class="logout-btn" (click)="logout()">
+      <span>⎋</span>
+      <span>Sair</span>
+    </button>
+  </div>
+
+</aside>
